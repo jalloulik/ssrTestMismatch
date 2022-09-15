@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <div>This is displayed on the server and client</div>
+    <div v-if="isMobile">This is displayed on mobile but always on server</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'SeoDependencyMismatchMobile',
+  data() {
+    return {
+      isMobile: true,
+    }
+  },
+  head: {
+    title: 'seoDependencyMismatchMobile',
+  },
+  beforeMount() {
+    // This is to demonstrate the case where the page loads on desktop on the client
+    this.isMobile = false
+  },
+}
+</script>
